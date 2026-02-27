@@ -1,0 +1,45 @@
+{
+  "name": "secureclaw",
+  "version": "0.1.0",
+  "description": "Self-hosted AI assistant reachable via Telegram with privacy-first design",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "lint": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "onboard": "tsx scripts/onboard.ts"
+  },
+  "dependencies": {
+    "grammy": "^1.40.0",
+    "@grammyjs/ratelimiter": "^2.0.0",
+    "ai": "^5.0.0",
+    "@ai-sdk/anthropic": "^1.0.0",
+    "@ai-sdk/openai": "^1.0.0",
+    "@ai-sdk/groq": "^1.0.0",
+    "@ai-sdk/mistral": "^1.0.0",
+    "@openrouter/ai-sdk-provider": "^2.2.0",
+    "ollama": "^0.5.0",
+    "drizzle-orm": "^0.38.0",
+    "better-sqlite3": "^11.0.0",
+    "express": "^4.21.0",
+    "zod": "^3.23.0",
+    "pino": "^9.0.0",
+    "pino-pretty": "^11.0.0",
+    "dotenv": "^16.4.0",
+    "duck-duck-scrape": "^2.2.0",
+    "axios": "^1.7.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "tsx": "^4.19.0",
+    "@types/node": "^22.0.0",
+    "@types/express": "^4.17.0",
+    "@types/better-sqlite3": "^7.6.0",
+    "drizzle-kit": "^0.29.0",
+    "vitest": "^2.0.0"
+  }
+}

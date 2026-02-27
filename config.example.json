@@ -1,0 +1,59 @@
+{
+  "bot": {
+    "webhookDomain": "https://yourbot.example.com",
+    "webhookPath": "/webhook",
+    "adminUserIds": [YOUR_TELEGRAM_USER_ID]
+  },
+  "security": {
+    "allowedUserIds": [YOUR_TELEGRAM_USER_ID],
+    "allowedGroupIds": [],
+    "maxMessageLength": 4000,
+    "rateLimitPerUser": {
+      "maxMessages": 10,
+      "windowSeconds": 60
+    }
+  },
+  "ai": {
+    "defaultModel": "ollama/llama3.2",
+    "privacyMode": true,
+    "externalModelsEnabled": false,
+    "fallbackChain": ["ollama/llama3.2"],
+    "externalModels": {
+      "anthropic": "anthropic/claude-opus-4-6",
+      "openai": "openai/gpt-4o",
+      "groq": "groq/llama-3.3-70b-versatile",
+      "openrouter": "openrouter/google/gemini-2.0-flash-001"
+    },
+    "maxHistoryMessages": 50,
+    "maxContextTokens": 100000,
+    "systemPrompt": "You are a helpful private AI assistant. Be concise and accurate. You have access to tools for web search, file operations, and code execution. Always respect privacy and security.",
+    "tools": {
+      "webSearch": {
+        "enabled": true,
+        "maxResults": 5
+      },
+      "fileSystem": {
+        "enabled": true,
+        "workspace": "/data/workspace"
+      },
+      "codeExecution": {
+        "enabled": true,
+        "timeoutSeconds": 30
+      }
+    }
+  },
+  "voice": {
+    "enabled": true,
+    "provider": "local",
+    "localWhisperModel": "base",
+    "groqFallback": false
+  },
+  "providers": {
+    "ollama": {
+      "baseUrl": "http://localhost:11434"
+    }
+  },
+  "db": {
+    "path": "/data/secureclaw.db"
+  }
+}

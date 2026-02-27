@@ -1,0 +1,33 @@
+[Unit]
+Description=SecureClaw AI Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=secureclaw
+WorkingDirectory=/opt/secureclaw
+EnvironmentFile=/opt/secureclaw/.env
+ExecStart=/usr/bin/node /opt/secureclaw/dist/index.js
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+PrivateTmp=true
+ReadWritePaths=/opt/secureclaw/data
+ProtectHome=yes
+ProtectClock=yes
+ProtectHostname=yes
+ProtectKernelLogs=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=yes
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+
+[Install]
+WantedBy=multi-user.target
