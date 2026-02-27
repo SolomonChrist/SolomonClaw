@@ -17,7 +17,7 @@ function question(prompt: string): Promise<string> {
 async function main(): Promise<void> {
   console.log(`
 ╔════════════════════════════════════════════════════╗
-║       🤖 SecureClaw Setup Wizard                   ║
+║       🤖 SolomonClaw Setup Wizard                   ║
 ╚════════════════════════════════════════════════════╝
 `);
 

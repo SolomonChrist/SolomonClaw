@@ -6,7 +6,7 @@ import * as schema from "./schema.js";
 
 let db: ReturnType<typeof drizzle> | null = null;
 
-export function initDB(dbPath: string = "/data/secureclaw.db"): void {
+export function initDB(dbPath: string = "/data/solomon-claw.db"): void {
   try {
     const sqlite = new Database(resolve(dbPath));
 

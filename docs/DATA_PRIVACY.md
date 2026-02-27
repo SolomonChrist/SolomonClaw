@@ -448,7 +448,7 @@ If you suspect a breach:
    # Send /export command via Telegram
 
    # If offline, manually query:
-   sqlite3 data/secureclaw.db "SELECT * FROM messages;" > backup.sql
+   sqlite3 data/solomon-claw.db "SELECT * FROM messages;" > backup.sql
    ```
 
 3. **Check access logs** for suspicious activity

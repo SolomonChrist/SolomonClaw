@@ -168,7 +168,7 @@ solomon-claw/
 │
 ├── src/                    # Application code (ready to run)
 ├── data/
-│   ├── secureclaw.db       # SQLite database (your conversations)
+│   ├── solomon-claw.db       # SQLite database (your conversations)
 │   ├── workspace/          # File I/O sandbox
 │   ├── exports/            # Session exports go here
 │   └── access-logs/        # Security audit trail

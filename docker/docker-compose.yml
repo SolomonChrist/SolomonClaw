@@ -1,11 +1,11 @@
 version: "3.9"
 
 services:
-  secureclaw:
+  solomon-claw:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-    container_name: secureclaw
+    container_name: solomon-claw
     restart: unless-stopped
     ports:
       - "127.0.0.1:3000:3000"
@@ -16,7 +16,7 @@ services:
     environment:
       - NODE_ENV=production
       - CONFIG_PATH=/data/config.json
-      - DATABASE_URL=/data/secureclaw.db
+      - DATABASE_URL=/data/solomon-claw.db
     healthcheck:
       test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"]
       interval: 30s

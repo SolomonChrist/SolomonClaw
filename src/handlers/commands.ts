@@ -24,7 +24,7 @@ async function handleStart(ctx: Context): Promise<void> {
     const privacyStatus = config.ai.privacyMode ? "🔒 Privacy mode: ON" : "🌐 External models: Enabled";
 
     await ctx.reply(
-      `👋 Welcome to SecureClaw!\n\n` +
+      `👋 Welcome to SolomonClaw!\n\n` +
         `🤖 Current AI Model: \`${currentModel}\`\n` +
         `${privacyStatus}\n\n` +
         `💬 Chat naturally - I'll understand commands like:\n` +
@@ -49,7 +49,7 @@ async function handleStart(ctx: Context): Promise<void> {
 async function handleHelp(ctx: Context): Promise<void> {
   try {
     await ctx.reply(
-      `📖 SecureClaw Help\n\n` +
+      `📖 SolomonClaw Help\n\n` +
         `🤖 **Natural Language Commands** (no slash needed):\n` +
         `  • "switch to Claude" / "use gpt-4o" / "try Groq"\n` +
         `  • "what model are you using?"\n` +

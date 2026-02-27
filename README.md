@@ -1,4 +1,4 @@
-# SecureClaw 🤖
+# SolomonClaw 🤖
 
 A privacy-first, self-hosted AI assistant reachable via Telegram. Complete local control with optional cloud model support.
 
@@ -47,7 +47,7 @@ A privacy-first, self-hosted AI assistant reachable via Telegram. Complete local
 ### Installation
 
 ```bash
-cd secureclaw
+cd solomon-claw
 
 # Run interactive setup
 npm run onboard
@@ -196,24 +196,24 @@ Access health check: `curl http://localhost:3000/health`
 ### Systemd (Bare Metal)
 
 ```bash
-# Copy project to /opt/secureclaw
-sudo cp -r . /opt/secureclaw
-cd /opt/secureclaw
+# Copy project to /opt/solomon-claw
+sudo cp -r . /opt/solomon-claw
+cd /opt/solomon-claw
 
 # Copy systemd unit
-sudo cp systemd/secureclaw.service /etc/systemd/system/
+sudo cp systemd/solomon-claw.service /etc/systemd/system/
 
 # Create user
-sudo useradd -r -s /bin/false secureclaw
-sudo chown -R secureclaw:secureclaw /opt/secureclaw
+sudo useradd -r -s /bin/false solomon-claw
+sudo chown -R solomon-claw:solomon-claw /opt/solomon-claw
 
 # Enable and start
 sudo systemctl daemon-reload
-sudo systemctl enable secureclaw
-sudo systemctl start secureclaw
+sudo systemctl enable solomon-claw
+sudo systemctl start solomon-claw
 
 # Check status
-sudo systemctl status secureclaw
+sudo systemctl status solomon-claw
 ```
 
 ### Webhook Mode (Cloud Deployment)
@@ -246,7 +246,7 @@ sudo systemctl status secureclaw
 ## Project Structure
 
 ```
-secureclaw/
+solomon-claw/
 ├── src/
 │   ├── index.ts               # Boot sequence, graceful shutdown
 │   ├── bot.ts                 # grammY Bot with middleware
@@ -296,7 +296,7 @@ secureclaw/
 │   └── docker-compose.yml     # Service + health checks
 │
 ├── systemd/
-│   └── secureclaw.service     # systemd unit
+│   └── solomon-claw.service     # systemd unit
 │
 ├── scripts/
 │   └── onboard.ts             # Interactive setup wizard
@@ -415,7 +415,7 @@ Body: <Telegram update JSON>
 
 1. Check `.env` has `TELEGRAM_BOT_TOKEN`
 2. Check `config.json` has your `allowedUserIds`
-3. Check logs: `docker compose logs -f` or `journalctl -u secureclaw -f`
+3. Check logs: `docker compose logs -f` or `journalctl -u solomon-claw -f`
 4. In polling mode: verify Ollama running on localhost:11434
 
 ### Models not available
@@ -434,13 +434,13 @@ Body: <Telegram update JSON>
 ### Database locked
 
 - SQLite WAL mode handles concurrent reads safely
-- If lock persists, `rm data/secureclaw.db-shm` and restart
+- If lock persists, `rm data/solomon-claw.db-shm` and restart
 
 ---
 
 ## Contributing
 
-To extend SecureClaw:
+To extend SolomonClaw:
 
 1. Add new tools: Edit `src/agent/tools.ts`
 2. Add new commands: Edit `src/handlers/commands.ts`
@@ -457,7 +457,7 @@ MIT
 
 ## Support
 
-- Issues: [Report on GitHub](https://github.com/yourusername/secureclaw)
+- Issues: [Report on GitHub](https://github.com/yourusername/solomon-claw)
 - Telegram Help: `/help` command in bot
 - Documentation: See `docs/` folder
 

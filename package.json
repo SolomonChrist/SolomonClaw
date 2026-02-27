@@ -1,5 +1,5 @@
 {
-  "name": "secureclaw",
+  "name": "solomon-claw",
   "version": "0.1.0",
   "description": "Self-hosted AI assistant reachable via Telegram with privacy-first design",
   "type": "module",

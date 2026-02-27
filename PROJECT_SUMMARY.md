@@ -124,7 +124,7 @@ npm run dev
 ### 3. Customize Before Sharing
 
 **In `README.md`:**
-- Change references from "SecureClaw" to "Solomon Claw"
+- Change references from "SolomonClaw" to "Solomon Claw"
 - Add your GitHub username
 - Add support/contact info
 

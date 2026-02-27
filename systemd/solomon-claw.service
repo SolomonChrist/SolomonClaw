@@ -1,13 +1,13 @@
 [Unit]
-Description=SecureClaw AI Telegram Bot
+Description=SolomonClaw AI Telegram Bot
 After=network.target
 
 [Service]
 Type=simple
-User=secureclaw
-WorkingDirectory=/opt/secureclaw
-EnvironmentFile=/opt/secureclaw/.env
-ExecStart=/usr/bin/node /opt/secureclaw/dist/index.js
+User=solomon-claw
+WorkingDirectory=/opt/solomon-claw
+EnvironmentFile=/opt/solomon-claw/.env
+ExecStart=/usr/bin/node /opt/solomon-claw/dist/index.js
 Restart=always
 RestartSec=10
 StandardOutput=journal
@@ -17,7 +17,7 @@ StandardError=journal
 NoNewPrivileges=true
 ProtectSystem=strict
 PrivateTmp=true
-ReadWritePaths=/opt/secureclaw/data
+ReadWritePaths=/opt/solomon-claw/data
 ProtectHome=yes
 ProtectClock=yes
 ProtectHostname=yes

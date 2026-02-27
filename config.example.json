@@ -54,6 +54,6 @@
     }
   },
   "db": {
-    "path": "/data/secureclaw.db"
+    "path": "/data/solomon-claw.db"
   }
 }

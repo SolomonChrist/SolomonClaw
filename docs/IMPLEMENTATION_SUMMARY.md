@@ -225,7 +225,7 @@ If all fail → FallbackExhaustedError with detailed attempt log
 ### Deployment
 - `docker/Dockerfile` - Multi-stage build, non-root user
 - `docker/docker-compose.yml` - Service with health checks
-- `systemd/secureclaw.service` - systemd unit with hardening
+- `systemd/solomon-claw.service` - systemd unit with hardening
 - `scripts/onboard.ts` - Interactive setup wizard
 
 ### Documentation
@@ -315,8 +315,8 @@ docker compose up -d
 ### systemd (Linux Server)
 ```bash
 sudo cp -r . /opt/solomon-claw
-sudo cp systemd/secureclaw.service /etc/systemd/system/
-sudo systemctl enable --now secureclaw
+sudo cp systemd/solomon-claw.service /etc/systemd/system/
+sudo systemctl enable --now solomon-claw
 ```
 
 ### Cloud (Webhook Mode)
@@ -446,7 +446,7 @@ These are fully designed but require additional development:
 
 **Admin/Operator:**
 - Check logs: `docker compose logs -f`
-- Monitor DB: `sqlite3 data/secureclaw.db`
+- Monitor DB: `sqlite3 data/solomon-claw.db`
 - View access logs: `cat data/access-logs/access-*.jsonl`
 
 **Documentation:**

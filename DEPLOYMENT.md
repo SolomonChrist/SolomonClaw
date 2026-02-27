@@ -108,7 +108,7 @@ docker compose down
 - Telegram: Invite bot and start chatting
 - Health check: `curl http://localhost:3000/health`
 - Logs: `docker compose logs --tail 100 -f`
-- Database: `docker exec solomon-claw sqlite3 /data/secureclaw.db`
+- Database: `docker exec solomon-claw sqlite3 /data/solomon-claw.db`
 
 ---
 
@@ -400,10 +400,10 @@ Response:
 ### Database Check
 ```bash
 # Local
-sqlite3 data/secureclaw.db "SELECT COUNT(*) FROM messages;"
+sqlite3 data/solomon-claw.db "SELECT COUNT(*) FROM messages;"
 
 # Docker
-docker exec solomon-claw sqlite3 /data/secureclaw.db "SELECT COUNT(*) FROM messages;"
+docker exec solomon-claw sqlite3 /data/solomon-claw.db "SELECT COUNT(*) FROM messages;"
 ```
 
 ### Logs Check
@@ -489,7 +489,7 @@ journalctl -u solomon-claw -f
 
 ```bash
 # Remove lock files
-rm -f data/secureclaw.db-shm data/secureclaw.db-wal
+rm -f data/solomon-claw.db-shm data/solomon-claw.db-wal
 
 # Restart
 systemctl restart solomon-claw
@@ -516,10 +516,10 @@ npm run onboard
 
 ```bash
 # Make backup
-cp data/secureclaw.db data/secureclaw.db.backup
+cp data/solomon-claw.db data/solomon-claw.db.backup
 
 # Or with Docker:
-docker exec solomon-claw cp /data/secureclaw.db /data/secureclaw.db.backup
+docker exec solomon-claw cp /data/solomon-claw.db /data/solomon-claw.db.backup
 ```
 
 ### Restore from Backup
@@ -529,7 +529,7 @@ docker exec solomon-claw cp /data/secureclaw.db /data/secureclaw.db.backup
 systemctl stop solomon-claw
 
 # Restore
-cp data/secureclaw.db.backup data/secureclaw.db
+cp data/solomon-claw.db.backup data/solomon-claw.db
 
 # Start
 systemctl start solomon-claw
@@ -572,7 +572,7 @@ watch -n 60 'curl -s http://localhost:3000/health | jq'
 ### Disk Usage
 ```bash
 du -sh data/
-du -sh data/secureclaw.db
+du -sh data/solomon-claw.db
 
 # If database grows too large, export and clear:
 # User sends: "end of session"

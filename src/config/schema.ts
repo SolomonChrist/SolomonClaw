@@ -61,7 +61,7 @@ export const ProvidersSchema = z.object({
 });
 
 export const DBSchema = z.object({
-  path: z.string().default("/data/secureclaw.db"),
+  path: z.string().default("/data/solomon-claw.db"),
 });
 
 export const ConfigSchema = z.object({
