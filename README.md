@@ -2,6 +2,8 @@
 
 A privacy-first, self-hosted AI assistant reachable via Telegram. Complete local control with optional cloud model support.
 
+DISCLAIMER: This is all experimental technology! Use at your own risk! Community supported as much as possible :)
+
 ## Features
 
 ✅ **Privacy-First Architecture**
